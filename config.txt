@@ -1,0 +1,21 @@
+Modifique archivos propios de WireUI
+
+- Recomendable copiar los archivos para proximos proyectos
+
+Los cambios fueron en:
+
+- text-field: vendor/wireui/wireui/src/Components/Wrapper/views/text-field.blade.php
+- base: vendor/wireui/wireui/src/Components/Select/views/base.blade.php
+- element: vendor/wireui/wireui/src/Components/Wrapper/views/components/element.blade.php
+- picker: vendor/wireui/wireui/src/Components/DatetimePicker/views/picker.blade.php (tiene varios cambios)
+- base button: vendor/wireui/wireui/src/Components/Button/views/base.blade.php
+
+Estos cambios fueron realizados cuidadosamente para mejorar 
+el diseño del select e input de los componentes de WireUI
+
+
+Realizé cambios en powergrid
+
+- vendor/power-components/livewire-powergrid/resources/views/components/frameworks/tailwind/header/soft-deletes.blade.php
+    Agegue el rounded-md
+    
