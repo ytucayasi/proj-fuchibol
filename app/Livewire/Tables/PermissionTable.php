@@ -110,19 +110,25 @@ final class PermissionTable extends PowerGridComponent
             Button::add('edit')
                 ->render(function ($permission) {
                     return Blade::render(<<<HTML
-                        <x-mini-button rounded icon="pencil" flat gray interaction="positive" wire:click="editPermission('{{ $permission->id }}')" />
+                        @can('editar $this->moduleName')
+                            <x-mini-button rounded icon="pencil" flat gray interaction="positive" wire:click="editPermission('{{ $permission->id }}')" />
+                        @endcan
                     HTML);
                 }),
             Button::add('delete')
                 ->render(function ($permission) {
                     return Blade::render(<<<HTML
-                        <x-mini-button rounded icon="trash" flat gray interaction="negative" wire:click="deletePermission('$permission->id')" />
+                        @can('eliminar $this->moduleName')
+                            <x-mini-button rounded icon="trash" flat gray interaction="negative" wire:click="deletePermission('$permission->id')" />
+                        @endcan
                     HTML);
                 }),
             Button::add('active')
                 ->render(function ($permission) {
                     return Blade::render(<<<HTML
-                        <x-mini-button rounded icon="bolt" flat gray interaction="warning" wire:click="activePermission('$permission->id')" />
+                        @can('editar $this->moduleName')
+                            <x-mini-button rounded icon="bolt" flat gray interaction="warning" wire:click="activePermission('$permission->id')" />
+                        @endcan
                     HTML);
                 }),
         ];

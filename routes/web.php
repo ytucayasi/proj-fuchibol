@@ -18,9 +18,7 @@ Volt::route('info', 'info')->middleware(['auth'])->name('info');
 Volt::route('usuarios', 'admin.user.index')->middleware(['auth', 'permission:mostrar usuarios'])->name('usuarios');
 Volt::route('roles', 'admin.role.index')->middleware(['auth', 'permission:mostrar roles'])->name('roles');
 Volt::route('permisos', 'admin.permission.index')->middleware(['auth', 'permission:mostrar permisos'])->name('permisos');
-Volt::route('jugadores', 'admin.permission.index')->middleware(['auth', 'permission:mostrar permisos'])->name('jugadores');
-Volt::route('presidentes', 'admin.permission.index')->middleware(['auth', 'permission:mostrar permisos'])->name('presidentes');
-Volt::route('equipos', 'admin.permission.index')->middleware(['auth', 'permission:mostrar permisos'])->name('equipos');
-Volt::route('secciones', 'admin.permission.index')->middleware(['auth', 'permission:mostrar permisos'])->name('secciones');
+Volt::route('jugadores', 'admin.jugador.index')->middleware(['auth', 'permission:mostrar jugadores'])->name('jugadores');
+Volt::route('equipos', 'admin.equipo.index')->middleware(['auth', 'permission:mostrar equipos'])->name('equipos');
 
 require __DIR__ . '/auth.php';

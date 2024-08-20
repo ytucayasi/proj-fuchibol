@@ -19,8 +19,7 @@ new class extends Component {
             <!-- Dashboard e Info -->
             <x-link-style :link="route('dashboard')" :label="'Dashboard'" :active="request()->routeIs('dashboard')"
                 wire:navigate />
-            <x-link-style :link="route('info')" :label="'Info'" :active="request()->routeIs('info')"
-                wire:navigate />
+            <x-link-style :link="route('info')" :label="'Info'" :active="request()->routeIs('info')" wire:navigate />
             @foreach (config('sidebar') as $group)
                         @php
                             $mostrarGrupo = false;
@@ -40,7 +39,7 @@ new class extends Component {
                         @foreach ($group['links'] as $link)
                             @can('mostrar ' . $link['route'])
                                 <x-dinamic-link :access="$link['route']" :link="route($link['route'])" :label="$link['label']"
-                                    :active="request()->routeIs($link['route'])" wire:navigate />
+                                    :active="request()->routeIs($link['route'])" />
                             @endcan
                         @endforeach
             @endforeach

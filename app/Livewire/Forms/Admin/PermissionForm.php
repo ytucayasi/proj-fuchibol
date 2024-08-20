@@ -21,14 +21,14 @@ class PermissionForm extends Form
     {
         $this->permission;
     }
-    public function rules()
-    {
-        return [
-            'name' => ['required', 'string', Rule::unique('permissions')->ignore($this->id)],
-            'action_id' => 'required|integer',
-            'module_id' => 'required|integer',
-        ];
-    }
+        public function rules()
+        {
+            return [
+                'name' => ['required', 'string', Rule::unique('permissions')->ignore($this->id)],
+                'action_id' => 'required|integer',
+                'module_id' => 'required|integer',
+            ];
+        }
     public function setPermission(Permission $permission)
     {
         $this->permission = $permission;

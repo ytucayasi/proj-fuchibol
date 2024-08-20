@@ -12,10 +12,16 @@ return new class extends Migration {
     {
         Schema::create('jugadores', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('identidad_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('equipo_id')->nullable();
-            $table->foreign('identidad_id')->references('id')->on('identidades')->onDelete('cascade');
+            $table->char('nro_colegiatura', 8)->unique();
+            $table->char('tipo_jugador', 1);
+            $table->string('foto_perfil', 250)->nullable();
+            $table->string('doc_dni', 250)->nullable();
+            $table->string('doc_titulo', 250)->nullable();
+            $table->string('doc_colegiatura', 250)->nullable();
             $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

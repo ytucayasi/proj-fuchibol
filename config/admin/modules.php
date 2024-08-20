@@ -23,17 +23,7 @@ return [
     ],
     [
         'id' => 5,
-        'ab' => 'presidentes',
-        'name' => 'Presidentes',
-    ],
-    [
-        'id' => 6,
         'ab' => 'equipos',
         'name' => 'Equipos',
-    ],
-    [
-        'id' => 7,
-        'ab' => 'secciones',
-        'name' => 'Secciones',
-    ],
+    ]
 ];

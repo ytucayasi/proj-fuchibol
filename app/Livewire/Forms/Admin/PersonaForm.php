@@ -31,9 +31,9 @@ class PersonaForm extends Form
     {
         return [
             'dni' => 'required|integer|min:10000000',
-            'nombre' => 'required|string|min:2|max:30|regex:/^[\pL\s]+$/u',
-            'apellido_paterno' => 'required|min:2|max:30|regex:/^[\pL\s]+$/u',
-            'apellido_materno' => 'required|min:2|max:30|regex:/^[\pL\s]+$/u',
+            'nombre' => 'required|string|min:2|max:30|regex:/^[\p{L}]+$/u',
+            'apellido_paterno' => 'required|min:2|max:30|regex:/^[\p{L}]+$/u',
+            'apellido_materno' => 'required|min:2|max:30|regex:/^[\p{L}]+$/u',
             'fecha_nacimiento' => 'required|date|before:today',
             'genero' => 'required|integer|min:1',
             'tipo_persona' => 'required|integer|min:1',

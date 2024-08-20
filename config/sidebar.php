@@ -19,28 +19,15 @@ return [
         ],
     ],
     [
-        'title' => 'Gestión de Personal',
+        'title' => 'Gestión General',
         'links' => [
             [
                 'route' => 'jugadores',
                 'label' => 'Jugadores',
             ],
             [
-                'route' => 'presidentes',
-                'label' => 'Presidentes',
-            ]
-        ],
-    ],
-    [
-        'title' => 'Gestión de Equipos',
-        'links' => [
-            [
                 'route' => 'equipos',
                 'label' => 'Equipos',
-            ],
-            [
-                'route' => 'secciones',
-                'label' => 'Secciones',
             ],
         ],
     ],

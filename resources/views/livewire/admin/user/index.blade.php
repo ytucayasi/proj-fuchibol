@@ -50,7 +50,7 @@ new class extends Component {
         $this->resetForm();
         $this->userForm->setUser($user);
         $this->personaForm->setPersona($user->id);
-        $this->areaName = strtolower($this->getArea($this->personaForm->area_id)['name']);
+        $this->areaName = strtolower($this->getArea($this->personaForm->area_id)['ab']);
         $this->userForm->email = $this->userForm->clearEmail($this->userForm->email);
         $this->userForm->selected_roles = $this->userForm->getRolesIds();
         $this->modal = true;
@@ -184,7 +184,7 @@ new class extends Component {
     public function updating($property, $value)
     {
         if ($property === 'personaForm.area_id') {
-            $this->areaName = $this->getArea($value) ? strtolower($this->getArea($value)['name']) : 'default';
+            $this->areaName = $this->getArea($value) ? strtolower($this->getArea($value)['ab']) : 'default';
         } else if ($property === 'personaForm.nombre') {
             $this->userForm->email = $this->createUser($value, $this->personaForm->apellido_paterno, 1);
             $this->userForm->name = $this->createUser($value, $this->personaForm->apellido_paterno, 2);
